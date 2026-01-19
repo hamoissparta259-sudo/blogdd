@@ -1,12 +1,13 @@
  <script setup>
-import { signinwithEmailAndPassword } from 'firebase/auth';    
+import { signInWithEmailAndPassword } from "firebase/auth";  
+import { auth } from '@/firebase/config';  
 import {ref} from 'vue';
 
 
 const email = ref(null);
 const password = ref(null);
 const login = async () => {
- await   signinwithEmailAndPassword(auth, email.value, password.value)
+ await   signInWithEmailAndPassword (auth, email.value, password.value)
 }
 
 </script>

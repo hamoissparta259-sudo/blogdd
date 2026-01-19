@@ -7,6 +7,10 @@ const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
+      path: '/',
+      redirect: '/login'
+    },
+    {
       name: 'Login',
       path: '/login',
       component: () => import('../Views/LoginView.vue'),
@@ -18,15 +22,22 @@ const router = createRouter({
       component: () => import('../Views/RegisterView.vue'),
       meta: { requiresAuth: false}
     },
+
     
     
     {
-      name: ' myhome',
+      name: ' Home',
       path: '/home',
       component: () => import('../Views/HomeView.vue'),
       meta: { requiresAuth: true}
     },
    
+    {
+      name: 'createpost',
+      path: '/createpost',
+      component: () => import('../Views/CreatePostView.vue'),
+      meta: { requiresAuth: true}
+    }
   
   ],
 })
